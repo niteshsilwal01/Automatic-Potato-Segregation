@@ -6,7 +6,7 @@ import process_image
 # Define the serial connection to Arduino
 arduinoData = serial.Serial('com3', 9600)
 
-contours = process_image.capture_contour()
+contours = process_image.capture_contour()[1]
 for cnt in contours:
     area = cv.contourArea(cnt)
     print(area)
