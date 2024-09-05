@@ -23,7 +23,7 @@ def capture_contour():
         kernel = np.ones((5, 5))
         imgDil = cv.dilate(imgCanny, kernel, iterations=1)
         contours, _ = cv.findContours(imgDil, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_NONE)
-        return contours
+        return img, contours
 
 
 
