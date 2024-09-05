@@ -9,11 +9,13 @@ def generate_predictions(test_image_path, actual_label):
   import cv2 as cv
   warnings.filterwarnings('ignore')
 
+  import process_image
+
   #Loading the trained cnn model
   model = tf.keras.models.load_model('train_classification.h5')
  
   #Load and preprocess the image
-  test_imge  = test_image_path
+  test_imge  = process_image.capture_contour()[0]
   test_img = cv.resize(test_imge,(150,150))
   test_img_arr = keras.utils.img_to_array(test_img)/255.0
   test_img_input = test_img_arr.reshape((1, test_img_arr.shape[0], test_img_arr.shape[1], test_img_arr.shape[2]))
@@ -25,6 +27,7 @@ def generate_predictions(test_image_path, actual_label):
                 10: 'Papaya', 11: 'Potato', 12: 'Pumpkin', 13: 'Radish', 14: 'Tomato'}
 
   predicted_vegetable = class_map[predicted_label]
+  actual_label = "Potato"
 
   if predicted_vegetable == actual_label:
     print('Potato Identified !! ')
