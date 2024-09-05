@@ -18,7 +18,10 @@ This project aims to automate the process of sorting and classifying potatoes by
 - **CNN Algorithm**: A Convolutional Neural Network is employed to classify the potatoes based on their size, using the contour area as the primary metric.
 - **Hardware Integration**: The system integrates various hardware components, including an Arduino microcontroller, servo motors, ultrasonic sensors, and a camera.
 
-![Project Process Workflow](images\Process Flowchart.png)
+<p align="center">
+  <img src="https://github.com/niteshsilwal01/Automatic-Potato-Segregation/blob/main/images/Process%20Flowchart.png?raw=true" alt="Process Flowchart">
+</p>
+
 
 ## Goals
 
