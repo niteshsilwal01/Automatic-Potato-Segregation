@@ -1,4 +1,4 @@
-def generate_predictions(actual_label = "Potato"):
+def generate_predictions(actual_label = 'Potato'):
 
   import numpy as np
   import matplotlib.pyplot as plt
