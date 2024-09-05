@@ -1,12 +1,11 @@
-def generate_predictions(test_image_path, actual_label):
+def generate_predictions(actual_label = "Potato"):
 
   import numpy as np
   import matplotlib.pyplot as plt
   import tensorflow as tf
   from tensorflow import keras
-  from keras.preprocessing.image import ImageDataGenerator
-  import warnings
   import cv2 as cv
+  import warnings
   warnings.filterwarnings('ignore')
 
   import process_image
@@ -27,7 +26,6 @@ def generate_predictions(test_image_path, actual_label):
                 10: 'Papaya', 11: 'Potato', 12: 'Pumpkin', 13: 'Radish', 14: 'Tomato'}
 
   predicted_vegetable = class_map[predicted_label]
-  actual_label = "Potato"
 
   if predicted_vegetable == actual_label:
     print('Potato Identified !! ')
