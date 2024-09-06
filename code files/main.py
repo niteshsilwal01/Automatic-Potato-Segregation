@@ -12,7 +12,7 @@ if cnn_test.generate_predictions() == 1:
     for cnt in contours:
         area = cv.contourArea(cnt)
         print(area)
-        if 4000 <= area < 10000:
+        if 4000 <= area <= 10000:
             print('Small Potato')
     
             cv.drawContours(img, [cnt], -1, (0, 255, 0), 2)
@@ -26,7 +26,7 @@ if cnn_test.generate_predictions() == 1:
             cmd = 'ONE\r'
             arduinoData.write(cmd.encode())
     
-        elif 10000 <= area <= 50000:
+        elif 10000 < area <= 50000:
             print('Medium Potato')
     
             cv.drawContours(img, [cnt], -1, (0, 255, 0), 2)
