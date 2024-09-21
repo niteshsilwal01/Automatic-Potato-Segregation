@@ -1,19 +1,20 @@
-def generate_predictions(test_image_path, actual_label):
+def generate_predictions(actual_label = 'Potato'):
 
   import numpy as np
   import matplotlib.pyplot as plt
   import tensorflow as tf
   from tensorflow import keras
-  from keras.preprocessing.image import ImageDataGenerator
-  import warnings
   import cv2 as cv
+  import warnings
   warnings.filterwarnings('ignore')
+
+  import process_image
 
   #Loading the trained cnn model
   model = tf.keras.models.load_model('train_classification.h5')
  
   #Load and preprocess the image
-  test_imge  = test_image_path
+  test_imge  = process_image.capture_contour()[0]
   test_img = cv.resize(test_imge,(150,150))
   test_img_arr = keras.utils.img_to_array(test_img)/255.0
   test_img_input = test_img_arr.reshape((1, test_img_arr.shape[0], test_img_arr.shape[1], test_img_arr.shape[2]))

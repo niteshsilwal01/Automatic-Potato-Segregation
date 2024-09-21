@@ -120,39 +120,6 @@ plt.xlabel("Number of Epochs")
 plt.legend(loc='best')
 plt.show()
 
-
-# Predict the accuracy for the test set
-model.evaluate(test_image_generator)
-
-# Testing the Model
-test_image_path = '/content/drive/MyDrive/Vegetable Images/test/Bean/0009.jpg'
-
-def generate_predictions(test_image_path, actual_label):
-    
-    # 1. Load and preprocess the image
-    test_img = image.load_img(test_image_path, target_size=(150, 150))
-    test_img_arr = image.img_to_array(test_img)/255.0
-    test_img_input = test_img_arr.reshape((1, test_img_arr.shape[0], test_img_arr.shape[1], test_img_arr.shape[2]))
-
-    # 2. Make Predictions
-    predicted_label = np.argmax(model.predict(test_img_input))
-    predicted_vegetable = class_map[predicted_label]
-    plt.figure(figsize=(4, 4))
-    plt.imshow(test_img_arr)
-    plt.title("Predicted: {}, Needed: {}".format(predicted_vegetable, actual_label))
-    plt.grid()
-    plt.axis('off')
-    plt.show()
-
-    if predicted_vegetable == actual_label:
-      print('Potato Identified !! ')
-      print('Proceed for Segregation')
-    else:
-      print('Warning, Not Potato !!')
-
-# call the function
-generate_predictions(test_image_path, actual_label='Potato')
-
 #save model 
 from tensorflow.keras.models import model
 model.save('/content/drive/MyDrive/fyp/train_classification.h5')

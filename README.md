@@ -12,16 +12,15 @@ This project aims to automate the process of sorting and classifying potatoes by
    - **Ultrasonic Sensors**: For detecting the presence of potatoes.
    - **Servo-Motor Operated Arms**: Controlled by an Arduino microcontroller, the servo arms guide the potatoes to designated containers based on their size.
 
+<p align="center">
+  <img src="https://github.com/niteshsilwal01/Automatic-Potato-Segregation/blob/main/images/Process%20Flowchart.png?raw=true" alt="Process Flowchart">
+</p>
+
 ## Implementation Details
 
 - **Image Processing**: The OpenCV module in Python is used to process each frame and detect the contours of the potatoes.
 - **CNN Algorithm**: A Convolutional Neural Network is employed to classify the potatoes based on their size, using the contour area as the primary metric.
 - **Hardware Integration**: The system integrates various hardware components, including an Arduino microcontroller, servo motors, ultrasonic sensors, and a camera.
-
-<p align="center">
-  <img src="https://github.com/niteshsilwal01/Automatic-Potato-Segregation/blob/main/images/Process%20Flowchart.png?raw=true" alt="Process Flowchart">
-</p>
-
 
 ## Goals
 
